@@ -11,6 +11,10 @@ template = template.replace('/*PARSER*/', parser);
 // Add Processor
 var proc = fs.readFileSync(__dirname + '/lib/UglifyJS/lib/process.js').toString();
 
+
+// Replace the require call at the beginning of the processor
+proc = proc.replace('require("./parse-js")', 'uglify.parser');
+
 // Do not add the require call
 var stopToken = "exports.ast_squeeze_more";
 proc = proc.substr(0, proc.indexOf(stopToken) - 1);
