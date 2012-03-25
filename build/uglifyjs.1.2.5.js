@@ -1429,7 +1429,7 @@ exports.set_logger = function(logger) {
 
  ***********************************************************************/
 
-var jsp = require("./parse-js"),
+var jsp = uglify.parser,
     slice = jsp.slice,
     member = jsp.member,
     PRECEDENCE = jsp.PRECEDENCE,
