@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <meta charset="UTF-8">
+     <title>TEST</title>
+</head>
+<body>
+<h1>Code</h1>
+<textarea rows="17" id="code" cols="80">(function(winReference) {
+     function myFunction(a, b) {
+          if (a &lt; b) {
+               return b + a; 
+          }
+          return a + b;
+     }
+
+     var someStr = "some string";
+
+     function getSomeStrLength() {
+          return someStr.length;
+     }
+
+     winReference.someStringLength = getSomeStrLength;
+
+})(window);</textarea><br>
+<button onclick="uglifyCode();return false;">Uglify</button>
+<h1>Result</h1>
+<textarea rows="8" id="result" cols="80"></textarea>
+
+<script src="uglifyjs.1.2.5.js"></script>
+<script>
+function uglifyCode() {
+     document.getElementById("result").value = uglify(document.getElementById("code").value);
+}
+</script>
+</body>
+</html>
