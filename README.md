@@ -1,4 +1,4 @@
-# Browser UglifiyJS
+# Browser UglifyJS
 
 ## About
 
@@ -29,7 +29,7 @@ Now you can uglify some code like this:
 
 ```javascript
 var rawCode = document.forms[0].rawCode.value;
-var minCode = uglifiy(rawCode);
+var minCode = uglify(rawCode);
 document.forms[0].minCode.value = minCode;
 ```
 
